@@ -6,12 +6,11 @@
 $leeftijd = 0;
 
 for ($x = 0; $x < 18; $x++) {
-    echo "Ik ben $x jaar, dus ik mag nog niet stemmen: $x <br>";
+    echo "<li>Ik ben $x jaar, dus ik mag nog niet stemmen: $x <br></li>";
   }
-  echo "ik ben 18 jaar oud dus ik heb stemrecht!";
-  ?>  
-
-}
+  
+  
+echo "<li>ik ben 18 jaar oud dus ik heb stemrecht!</li>";
 ?>  
 
 </body>
