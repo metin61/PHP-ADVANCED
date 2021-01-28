@@ -5,41 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      body {
-          background-color: <?php echo $_POST["kleuren"]; ?>
-          
+    
+    body {
+        background-color: <?php echo $_POST["kleuren"]; ?>;
+        color: <?php echo $_POST["textKleur"]; ?>;
+        
 
-      }
-      body {
-         color: <?php echo $_POST["textKleur"]; ?>
-          
+    }
 
-      }
-  </style>
+    table, tr, td{
+        border: <?php echo $_POST["dikteRand"]; ?>px solid black;
+        padding: <?php echo$_POST["ruimteTussen"]; ?>px;
+    }
+    
+    </style>
 </head>
 <body>
-    <?php
-    
+      
+            <?php
+    $Metin = array(
+    "naam" => "Metin",
+     "leeftijd" => "22", 
+     "woonplaats" => "Amsterdam", 
+     "Klas" => "0D", 
+     "sport" => "Voetbal");
 
-    echo "Voornaam is:<br/>".$_POST["Voornaam"];
-  
-    echo "<br/>Achternaam is:<br/>".$_POST["Achternaam"];
-  
-    echo "<br/>Klas is:<br/>".$_POST["Klas"];
-  
-    echo "<br/>Leeftijd is:<br/>".$_POST["Leeftijd"];
-  
-    echo "<br/>Adres is:<br/>".$_POST["Adres"];
-    
-    echo "<br/>Plaatsnaam is:<br/>".$_POST["Plaatsnaam"];
-  
-    echo "<br/>Geslacht is :<br/>".$_POST["geslacht"];
-  
-   
-
-    ?>
-
-    
-    
+    function maakRij($tabel1, $tabel2){
+        echo '<tr>
+                    <td>'.$tabel1.'</td>
+                    <td>'.$tabel2.'</td>
+                </tr>';
+    }
+ ?>
+<body>
+    <table>
+        <tr>
+        <?php 
+            foreach($Metin as $eigenschap => $waarde){
+               maakRij($eigenschap, $waarde); 
+            }
+        ?>
+        </tr>
+    </table>
+ 
 </body>
+
+                    
+                   
+                 
+
 </html>

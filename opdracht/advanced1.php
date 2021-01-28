@@ -9,39 +9,33 @@
     
 <form name="invoerformulier"action="advanced2.php" method="post">
           
-          <br><label for="voornaam">voornaam:</label><br>
-          <input type="text" id= voornaam name= "Voornaam"><br><br>
           
 
-       
-          <label for="achternaam">achternaam:</label><br>
-          <input type="text" id= achternaam name= "Achternaam"><br><br>
+          <br><label for="dikteRand">Dikte rand(px):</label><br>
+          <select id="select" name="dikteRand">  
+          <?php
+            $dikteRand = array("5", "10", "15");
+                foreach ($dikteRand as $value){
+                    echo "<option value=" . $value . ">" . $value . "</option>";
+                }
+                ?>
+          </select>  <br><br>
           
 
-          <label for="klas">klas:</label><br>
-          <input type="text" id= klas name= "Klas"><br><br>
           
 
-          <label for="leeftijd">leeftijd:</label><br>
-          <input type="text" id= leeftijd name= "Leeftijd"><br><br>
+          <br><label for="ruimteTussen">cel-padding(px):</label><br>
+          <select id="select" name="ruimteTussen">  
+          <?php
+            $ruimteTussen = array("10", "20", "30");
+                foreach ($ruimteTussen as $value){
+                    echo "<option value=" . $value . ">" . $value . "</option>";
+                }
+                ?>
+          </select>  <br><br>
           
 
-          <label for="adres">adres:</label><br>
-          <input type="text" id= adres name= "Adres"><br><br>
-          
-
-          <label for="plaatsnaam">plaatsnaam:</label><br>
-          <input type="text" id= plaatsnaam name= "Plaatsnaam"><br><br>
-         
-
-
-          <label for="geslacht">Geslacht:</label>  <br><br>
-          <label for="man">man:</label>
-          <input type="radio" value="man" id= "man" name= "geslacht">
-          <label for="vrouw">vrouw:</label>
-          <input type="radio" value="vrouw" id= "vrouw" name= "geslacht"><br><br><br>
-          
-          
+            
           
           <label for="achtergrondkleur">Achtergrond kleur:</label><br>
           
@@ -49,7 +43,7 @@
 <form name="formulier"action="advanced2.php" method="post">
             <select id="select" name="kleuren">  
             <?php
-            $kleuren = array("red", "blue", "green", "black", "brown");
+            $kleuren = array("red", "blue", "green","brown");
                 foreach ($kleuren as $value){
                     echo "<option value=" . $value . ">" . $value . "</option>";
                 }
@@ -72,6 +66,7 @@
                 
                 <input type="submit" name= "submit" value="verstuur">
         </select>
+        
        
           
 </form>          
